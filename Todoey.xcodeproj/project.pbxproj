@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33CA0EA720B3B794003FC202 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EEAAC920B24533007A6F62 /* Main.storyboard */; };
 		33EEAAC620B24533007A6F62 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEAAC520B24533007A6F62 /* AppDelegate.swift */; };
 		33EEAAC820B24533007A6F62 /* TodoListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33EEAAC720B24533007A6F62 /* TodoListVC.swift */; };
-		33EEAACB20B24533007A6F62 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EEAAC920B24533007A6F62 /* Main.storyboard */; };
 		33EEAACD20B24534007A6F62 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 33EEAACC20B24534007A6F62 /* Assets.xcassets */; };
 		33EEAAD020B24534007A6F62 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 33EEAACE20B24534007A6F62 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -124,7 +124,7 @@
 			files = (
 				33EEAAD020B24534007A6F62 /* LaunchScreen.storyboard in Resources */,
 				33EEAACD20B24534007A6F62 /* Assets.xcassets in Resources */,
-				33EEAACB20B24533007A6F62 /* Main.storyboard in Resources */,
+				33CA0EA720B3B794003FC202 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +287,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MattSutton.Todoey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,7 +305,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.test.Todoey;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MattSutton.Todoey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
