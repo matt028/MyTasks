@@ -1,6 +1,6 @@
 //
 //  Category.swift
-//  Todoey
+//  MyTasks
 //
 //  Created by Matthew Sutton on 5/30/18.
 //  Copyright © 2018 Matthew Sutton. All rights reserved.

@@ -26,7 +26,7 @@
 		333F5A5120BF86EB00CD3801 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		333F5A5320BF86F500CD3801 /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		337CC21720C7763A0025E06D /* SwipeTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeTableVC.swift; sourceTree = "<group>"; };
-		33EEAAC220B24533007A6F62 /* Todoey.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Todoey.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		33EEAAC220B24533007A6F62 /* MyTasks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyTasks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		33EEAAC520B24533007A6F62 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		33EEAAC720B24533007A6F62 /* TodoListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoListVC.swift; sourceTree = "<group>"; };
 		33EEAACA20B24533007A6F62 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -110,7 +110,7 @@
 		33EEAAC320B24533007A6F62 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				33EEAAC220B24533007A6F62 /* Todoey.app */,
+				33EEAAC220B24533007A6F62 /* MyTasks.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -138,9 +138,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		33EEAAC120B24533007A6F62 /* Todoey */ = {
+		33EEAAC120B24533007A6F62 /* MyTasks */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 33EEAAD420B24534007A6F62 /* Build configuration list for PBXNativeTarget "Todoey" */;
+			buildConfigurationList = 33EEAAD420B24534007A6F62 /* Build configuration list for PBXNativeTarget "MyTasks" */;
 			buildPhases = (
 				BB25849D4D80278C7E91A69D /* [CP] Check Pods Manifest.lock */,
 				33EEAABE20B24533007A6F62 /* Sources */,
@@ -152,9 +152,9 @@
 			);
 			dependencies = (
 			);
-			name = Todoey;
+			name = MyTasks;
 			productName = Todoey;
-			productReference = 33EEAAC220B24533007A6F62 /* Todoey.app */;
+			productReference = 33EEAAC220B24533007A6F62 /* MyTasks.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -172,7 +172,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 33EEAABD20B24533007A6F62 /* Build configuration list for PBXProject "Todoey" */;
+			buildConfigurationList = 33EEAABD20B24533007A6F62 /* Build configuration list for PBXProject "MyTasks" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -185,7 +185,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				33EEAAC120B24533007A6F62 /* Todoey */,
+				33EEAAC120B24533007A6F62 /* MyTasks */,
 			);
 		};
 /* End PBXProject section */
@@ -231,6 +231,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Todoey/Pods-Todoey-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/ChameleonFramework/ChameleonFramework.framework",
+				"${BUILT_PRODUCTS_DIR}/ProgressHUD/ProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/SwipeCellKit/SwipeCellKit.framework",
@@ -238,6 +239,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ChameleonFramework.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwipeCellKit.framework",
@@ -407,11 +409,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6VD9U94TJ;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattSutton.Todoey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -423,18 +428,21 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = C6VD9U94TJ;
 				INFOPLIST_FILE = "$(SRCROOT)/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.MattSutton.Todoey;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		33EEAABD20B24533007A6F62 /* Build configuration list for PBXProject "Todoey" */ = {
+		33EEAABD20B24533007A6F62 /* Build configuration list for PBXProject "MyTasks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33EEAAD220B24534007A6F62 /* Debug */,
@@ -443,7 +451,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		33EEAAD420B24534007A6F62 /* Build configuration list for PBXNativeTarget "Todoey" */ = {
+		33EEAAD420B24534007A6F62 /* Build configuration list for PBXNativeTarget "MyTasks" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				33EEAAD520B24534007A6F62 /* Debug */,

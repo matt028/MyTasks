@@ -1,6 +1,6 @@
 //
 //  SwipeTableVC.swift
-//  Todoey
+//  MyTasks
 //
 //  Created by Matthew Sutton on 6/5/18.
 //  Copyright © 2018 Matthew Sutton. All rights reserved.

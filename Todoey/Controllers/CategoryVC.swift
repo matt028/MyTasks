@@ -1,6 +1,6 @@
 //
 //  CategoryVC.swift
-//  Todoey
+//  MyTasks
 //
 //  Created by Matthew Sutton on 5/28/18.
 //  Copyright © 2018 Matthew Sutton. All rights reserved.
@@ -8,7 +8,7 @@
 
 import UIKit
 import RealmSwift
-import ChameleonFramework
+import ProgressHUD
 
 class CategoryVC: SwipeTableVC{
     
@@ -16,15 +16,15 @@ class CategoryVC: SwipeTableVC{
     
     var categories : Results<Category>?
     
-    
+   
     // MARK: - View Did Load
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadCategories()
+
         
-        tableView.separatorStyle = .none
     }
     
     
@@ -43,12 +43,8 @@ class CategoryVC: SwipeTableVC{
         if let category = categories?[indexPath.row] {
             
             cell.textLabel?.text = category.name
-            
-            guard let categoryColor = UIColor(hexString: category.color) else {fatalError()}
-            
-            cell.backgroundColor = categoryColor
-            
-            cell.textLabel?.textColor = ContrastColorOf(categoryColor, returnFlat: true)
+    
+            cell.textLabel?.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
             
         }
 
@@ -100,6 +96,7 @@ class CategoryVC: SwipeTableVC{
             do {
                 try self.realm.write {
                     self.realm.delete(categoryForDeletion)
+                    ProgressHUD.showSuccess("Category & Items Deleted")
                 }
             } catch {
                 print("Error deleting category, \(error)")
@@ -114,15 +111,16 @@ class CategoryVC: SwipeTableVC{
         
         var textField = UITextField()
         
-        let alert = UIAlertController(title: "Add New Category", message: "", preferredStyle: .alert)
+        let alert = UIAlertController(title: "New Category", message: "", preferredStyle: .alert)
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
             //what will happen once the user clicks the Add Item button on our UIAlert
             let newCategory = Category()
             newCategory.name = textField.text!
-            newCategory.color = UIColor.randomFlat.hexValue()
-                
+            
+            ProgressHUD.showSuccess("Category Created")
+            
             self.save(category: newCategory)
             
         }
